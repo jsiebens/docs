@@ -351,6 +351,20 @@ inletsctl create -p gce -p $PROJECTID -f=key.json
 inletsctl create -p gce --project-id=$PROJECTID -f key.json --zone=us-central1-a
 ```
 
+### Example usage with Vultr
+
+Prerequisites:
+* Prepare a Vultr API Key via your [Members Area](https://my.vultr.com/settings/#settingsapi)
+
+```
+# Obtain your Vultr API Key
+export VULTR_API_KEY=""
+
+inletsctl create --provider vultr \
+  --access-token $VULTR_API_KEY \
+  --region LHR
+```
+
 ## Troubleshooting
 
 inletsctl provisions a host called an exit node or exit server using public cloud APIs. It then 
